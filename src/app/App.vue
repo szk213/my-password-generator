@@ -4,7 +4,7 @@
 <template>
   <v-ons-splitter>
     <v-ons-splitter-side
-      swipeable width="150px" collapse="" side="left"
+      swipeable width="200px" collapse="" side="left"
       :open="openSide"
       @update="openSide = $event"
     >
@@ -12,9 +12,9 @@
         <v-ons-list>
           <v-ons-list-item v-for="page in pages" :key="page.id"
             tappable modifier="chevron"
-            @click="currentPage = page; openSide = false"
+            @click="currentPage = page.name; openSide = false"
           >
-            <div class="center">{{ page }}</div>
+            <div class="center">{{ page.title }}</div>
           </v-ons-list-item>
         </v-ons-list>
       </v-ons-page>
@@ -27,19 +27,28 @@
 </template>
 
 <script>
-  import Home from '../components/Home.vue';
+  import PasswordList from '../components/PasswordList.vue';
   import Settings from '../components/Settings.vue'
 
   module.exports = {
     data() {
       return {
-        currentPage: 'home',
-        pages: ['home', 'settings'],
+        currentPage: 'passwordList',
+        pages: [
+          {
+            'name': 'passwordList',
+            'title': 'Password List'
+          },
+          {
+            'name': 'settings',
+            'title': 'Settings'
+          }
+        ],
         openSide: false
       };
     },
     components: {
-      home: Home,
+      passwordList: PasswordList,
       settings: Settings
     }
   }

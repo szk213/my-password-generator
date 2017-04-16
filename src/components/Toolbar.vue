@@ -9,6 +9,7 @@
       </v-ons-toolbar-button>
     </div>
     <div class="center">{{ title }}</div>
+    <slot></slot>
   </v-ons-toolbar>
 </template>
 
