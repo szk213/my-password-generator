@@ -1,5 +1,5 @@
 /node_modules/
 /.idea/
-/platforms
-/plugins
+cordova/platforms/
+cordova/plugins/
 
