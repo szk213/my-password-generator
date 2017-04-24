@@ -1,11 +1,8 @@
-import 'onsenui/css/onsenui.css';
-import 'onsenui/css/onsen-css-components.css';
 
-import Vue from 'vue';
-import VueOnsen from 'vue-onsenui';
-import 'onsenui';
-import App from './App.vue';
+import riot from 'riot'
+import 'riot-hot-reload'
+import './random.tag'
 
-Vue.use(VueOnsen);
-
-const app = new Vue(App).$mount('#app');
+riot.mount('random', {
+  title: 'Hi there!'
+})
